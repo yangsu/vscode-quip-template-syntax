@@ -1,0 +1,33 @@
+{
+    "name": "tornado",
+    "displayName": "Tornado",
+    "description": "Tornado template support",
+    "version": "0.0.1",
+    "publisher": "abdelouahab",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": [
+        "Languages",
+        "Snippets"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "tornado",
+            "aliases": ["HTML (Tornado)", "tornado"],
+            "extensions": [".html",".htm"],
+            "configuration": "./tornado-configuration.json"
+        }],
+        "grammars": [{
+            "language": "tornado",
+            "scopeName": "text.html.django",
+            "path": "./syntaxes/tornado.json"
+        }],
+        "snippets": [
+            {
+                "language": "tornado",
+                "path": "./snippets/tornado.json"
+            }
+        ]
+    }
+}
