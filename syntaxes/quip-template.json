@@ -2,43 +2,77 @@
     "fileTypes": [],
     "keyEquivalent": "^~D",
     "name": "HTML (Quip Template)",
+    "injections": {
+        "R:text.html": {
+            "comment": "Use R: to ensure this matches after any other injections.",
+            "patterns": [
+                {
+                    "begin": "={{",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "keyword.control.python"
+                        }
+                    },
+                    "end": "}}",
+                    "endCaptures": {
+                        "0": {
+                            "name": "keyword.control.python"
+                        }
+                    },
+                    "name": "meta.tag.template.variable.quip-template.template",
+                    "patterns": [
+                        {
+                            "include": "source.python"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
     "patterns": [
         {
-            "comment": "Since html is valid in Quip templates include the html patterns",
             "include": "text.html.basic"
         },
         {
-            "begin": "({{)",
-            "captures": {
-                "1": {
+            "begin": "{{",
+            "beginCaptures": {
+                "0": {
                     "name": "keyword.control.python"
                 }
             },
-            "end": "(}})",
-            "name": "meta.tag.template.variable.django.template",
+            "end": "}}",
+            "endCaptures": {
+                "0": {
+                    "name": "keyword.control.python"
+                }
+            },
+            "name": "meta.tag.template.variable.quip-template.template",
             "patterns": [
                 {
-                    "match": "[\\S&&[^}]]+",
                     "include": "source.python"
                 }
             ]
         },
         {
-            "begin": "(<%)",
-            "captures": {
-                "1": {
+            "begin": "<%",
+            "beginCaptures": {
+                "0": {
                     "name": "keyword.control.python"
                 }
             },
-            "end": "(%>)",
-            "name": "meta.scope.django.template.tag",
+            "end": "%>",
+            "endCaptures": {
+                "0": {
+                    "name": "keyword.control.python"
+                }
+            },
+            "name": "meta.scope.quip-template.template.tag",
             "patterns": [
                 {
                     "match": "\\b(set|optional|required)\\b",
                     "name": "keyword.control.python"
                 },
                 {
-                    "match": "[a-zA-Z_]+",
                     "include": "source.python"
                 }
             ]
@@ -49,5 +83,5 @@
             "name": "keyword.control.python"
         }
     ],
-    "scopeName": "text.html.django"
+    "scopeName": "text.html.quip-template"
 }

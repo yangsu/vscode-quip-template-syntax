@@ -20,7 +20,7 @@
         }],
         "grammars": [{
             "language": "quip-template",
-            "scopeName": "text.html.django",
+            "scopeName": "text.html.quip-template",
             "path": "./syntaxes/quip-template.json"
         }],
         "snippets": [
