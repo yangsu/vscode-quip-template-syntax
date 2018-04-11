@@ -1,9 +1,9 @@
 {
-    "name": "tornado",
-    "displayName": "Tornado",
-    "description": "Tornado template support",
+    "name": "quip-template",
+    "displayName": "Quip Template",
+    "description": "Quip Template Support for VSCode",
     "version": "0.0.1",
-    "publisher": "abdelouahab",
+    "publisher": "yangsu",
     "engines": {
         "vscode": "^1.0.0"
     },
@@ -13,20 +13,20 @@
     ],
     "contributes": {
         "languages": [{
-            "id": "tornado",
-            "aliases": ["HTML (Tornado)", "tornado"],
+            "id": "quip-template",
+            "aliases": ["HTML (Quip Template)", "quip-template"],
             "extensions": [".html",".htm"],
-            "configuration": "./tornado-configuration.json"
+            "configuration": "./quip-template-configuration.json"
         }],
         "grammars": [{
-            "language": "tornado",
+            "language": "quip-template",
             "scopeName": "text.html.django",
-            "path": "./syntaxes/tornado.json"
+            "path": "./syntaxes/quip-template.json"
         }],
         "snippets": [
             {
-                "language": "tornado",
-                "path": "./snippets/tornado.json"
+                "language": "quip-template",
+                "path": "./snippets/quip-template.json"
             }
         ]
     }

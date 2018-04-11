@@ -1,0 +1,53 @@
+{
+    "fileTypes": [],
+    "keyEquivalent": "^~D",
+    "name": "HTML (Quip Template)",
+    "patterns": [
+        {
+            "comment": "Since html is valid in Quip templates include the html patterns",
+            "include": "text.html.basic"
+        },
+        {
+            "begin": "({{)",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.python"
+                }
+            },
+            "end": "(}})",
+            "name": "meta.tag.template.variable.django.template",
+            "patterns": [
+                {
+                    "match": "[\\S&&[^}]]+",
+                    "include": "source.python"
+                }
+            ]
+        },
+        {
+            "begin": "(<%)",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.python"
+                }
+            },
+            "end": "(%>)",
+            "name": "meta.scope.django.template.tag",
+            "patterns": [
+                {
+                    "match": "\\b(set|optional|required)\\b",
+                    "name": "keyword.control.python"
+                },
+                {
+                    "match": "[a-zA-Z_]+",
+                    "include": "source.python"
+                }
+            ]
+        },
+        {
+            "begin": "</%>",
+            "end": "",
+            "name": "keyword.control.python"
+        }
+    ],
+    "scopeName": "text.html.django"
+}
