@@ -1,62 +1,86 @@
 {
-  "_": {
-    "prefix": "_",
-    "body": "{{ _(\"$1\") }}",
-    "description": ""
-  },
-  "safe_html": {
-    "prefix": "safe",
-    "body": "safe_html(_(\"$1\"))",
-    "description": "safe_html(_(...))"
-  },
-  "%": {
-    "prefix": "%",
-    "body": "<% $1 %>\n  $0\n</%>",
-    "description": "% block with close tag"
-  },
-  "/": {
-    "prefix": "/",
-    "body": "</%>",
-    "description": "% close tag"
-  },
-  "elif": {
-    "prefix": "elif",
-    "body": "<% elif $1 %>\n  $2",
-    "description": ""
-  },
-  "else": {
-    "prefix": "else",
-    "body": "<% else %>\n  $1",
-    "description": ""
-  },
-  "for": {
-    "prefix": "for",
-    "body": "<% for $1 %>\n  $2\n</%>",
-    "description": ""
-  },
-  "ife": {
-    "prefix": "ife",
-    "body": "<% if $1 %>\n  $2\n<% else %>\n  $3\n</%>$0",
-    "description": "if else"
-  },
-  "if": {
-    "prefix": "if",
-    "body": "<% if $1 %>\n  $2\n</%>$0",
-    "description": ""
-  },
-  "op": {
-    "prefix": "op",
-    "body": "<% optional $1 %>$0",
-    "description": "optional parameter"
-  },
-  "rq": {
-    "prefix": "rq",
-    "body": "<% required $1 %>$0",
-    "description": "required parameter"
-  },
-  "set": {
-    "prefix": "set",
-    "body": "<% set $1 = $2 %>$0",
-    "description": ""
-  }
+    "_": {
+        "prefix": "_",
+        "body": "{{ _(\"$1\") }}",
+        "description": ""
+    },
+    "safe_html": {
+        "prefix": "safe",
+        "body": "safe_html(_(\"$1\"))",
+        "description": "safe_html(_(...))"
+    },
+    "%": {
+        "prefix": "%",
+        "body": [
+            "<% $1 %>",
+            "$0",
+            "</%>"
+        ],
+        "description": "% block with close tag"
+    },
+    "/": {
+        "prefix": "/",
+        "body": "</%>",
+        "description": "% close tag"
+    },
+    "elif": {
+        "prefix": "elif",
+        "body": [
+            "<% elif $1 %>",
+            "$2"
+        ],
+        "description": ""
+    },
+    "else": {
+        "prefix": "else",
+        "body": [
+            "<% else %>",
+            "$1"
+        ],
+        "description": ""
+    },
+    "for": {
+        "prefix": "for",
+        "body": [
+            "<% for $1 %>",
+            "$2",
+            "</%>"
+        ],
+        "description": ""
+    },
+    "ife": {
+        "prefix": "ife",
+        "body": [
+            "<% if $1 %>",
+            "$2",
+            "<% else %>",
+            "$3",
+            "</%>$0"
+        ],
+        "description": "if else"
+    },
+    "if": {
+        "prefix": "if",
+        "body": [
+            "<% if $1 %>",
+            "$2",
+            "</%>$0"
+        ],
+        "description": ""
+    },
+    "op": {
+        "prefix": "op",
+        "body": "<% optional $1 %>$0",
+        "description": "optional parameter"
+    },
+    "rq": {
+        "prefix": "rq",
+        "body": "<% required $1 %>$0",
+        "description": "required parameter"
+    },
+    "set": {
+        "prefix": "set",
+        "body": "<% set $1 = $2 %>$0",
+        "description": ""
+    }
 }
